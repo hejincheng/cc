@@ -1,0 +1,40 @@
+git语言
+
+	git clone  克隆
+	git push   提交
+	git commit 推送
+
+	git add    添加版本控制文件
+	git init   仓库初始化
+
+gti工具
+	
+	TortoiseGit小乌龟
+
+git远程代码管理(基于SSH)
+	
+	git：
+		1,先配置信息
+		$ git config --global user.name "名字"
+		$ git config --global user.email "邮箱"
+
+		2,生成密钥
+		检查有没有生成:cd ~/.ssh后
+		$ ssh-keygen -t rsa -C "gitlab的账号邮箱"
+		执行后按两次确定
+		最后得到了两个文件：id_rsa和id_rsa.pub
+
+		3,把公钥上传到git服务器上的ssh
+
+	TortoiseGit:
+		1,使用PuttyGen生成秘钥,要滚动鼠标
+		生成完后有一个公钥，要复制粘贴到文本中。如：
+		ssh-rsa AAAAB3NzaC1yc2EAAAABJQAAAQEAlayTNPrRw4UOPpgeWB8T8SaedFxp6Eva8y8VI3gSvhLMTFrXmH07jwgU1CNnBxkDGEpafQZer0V1bMuuPucAAx+OoCnHlCGKh3uLA7AnsyRz85dpDhv8dm1HeATzdvekX+fA5vHhht2WQu/2o8ZgfSTE1BGD0n6mOEaqYw7A/QlBjLveap/9qygLR870V7J7ABa2cWOeUtRT2442iYs8XXI+SxBINXvm2IAxYnySJAMPc5LxjDJHstyjSltoxvnHiZbYguazUvoKOe2Y7NknF/ojwRt2QPYC/b9yPw5RbCiegPDsqCENimD4zefJg2U7uzp5hO79lWfKmbRp2ulQmw== rsa-key-20180419
+		注意：开头是要ssh-rsa + 其他
+		保存好公钥和私钥
+
+		2,添加上面公钥到git服务器上的ssh
+
+		3,运行Pageant,添加私钥后就可以拉取提交
+
+
